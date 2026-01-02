@@ -223,6 +223,35 @@
     animation: draw-line 1s ease-out forwards;
   }
   
+  /* Carousel scroll animation */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+  
+  .animate-scroll-left {
+    animation: scroll-left 10s linear infinite;
+  }
+  
+  /* Gold ring hover effect */
+  .gold-ring-hover {
+    @apply relative transition-all duration-300;
+  }
+  
+  .gold-ring-hover::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl pointer-events-none transition-all duration-300;
+    box-shadow: 0 0 0 0 hsl(40 55% 58% / 0);
+  }
+  
+  .gold-ring-hover:hover::before {
+    box-shadow: 0 0 0 4px hsl(40 55% 58% / 1);
+  }
+  
   /* Stagger children animations */
   .stagger-children > * {
     opacity: 0;
@@ -235,4 +264,22 @@
   .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
   .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
   .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+  /* Background texture pattern for sections */
+  .section-bg-pattern {
+    position: relative;
+  }
+  
+  .section-bg-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(40 55% 58% / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(352 63% 27% / 0.05) 0%, transparent 50%),
+      linear-gradient(45deg, transparent 45%, hsl(40 55% 58% / 0.02) 45%, hsl(40 55% 58% / 0.02) 55%, transparent 55%);
+    background-size: 100% 100%, 100% 100%, 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+  }
 }

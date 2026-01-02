@@ -30,8 +30,8 @@ const values = [
 
 export function Values() {
   return (
-    <section className="py-24 md:py-32 bg-gradient-subtle relative overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-24 md:py-32 relative overflow-hidden section-bg-pattern">
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4">
@@ -50,7 +50,7 @@ export function Values() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="group bg-card rounded-2xl p-6 shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-accent/20"
+              className="group bg-card/80 backdrop-blur-sm rounded-2xl p-6 shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1 gold-ring-hover"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
                 <value.icon className="w-6 h-6 text-accent" />

@@ -8,11 +8,11 @@ const stats = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-card relative overflow-hidden">
+    <section id="about" className="py-24 md:py-32 relative overflow-hidden section-bg-pattern">
       {/* Subtle accent line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
       
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <div className="space-y-8">
@@ -31,9 +31,9 @@ export function About() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-border relative z-10">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
+                <div key={index} className="text-center gold-ring-hover rounded-2xl p-4 bg-card/50 backdrop-blur-sm">
                   <stat.icon className="w-6 h-6 text-accent mx-auto mb-2" />
                   <p className="text-2xl md:text-3xl font-display font-bold text-foreground">
                     {stat.value}
@@ -46,7 +46,7 @@ export function About() {
 
           {/* Right: Story */}
           <div className="relative">
-            <div className="bg-secondary rounded-2xl p-8 md:p-10 shadow-soft">
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-soft gold-ring-hover">
               <div className="flex items-center gap-3 mb-6">
                 <Eye className="w-5 h-5 text-accent" />
                 <span className="text-sm font-medium text-accent uppercase tracking-wider">
@@ -55,8 +55,8 @@ export function About() {
               </div>
               
               <p className="text-foreground leading-relaxed mb-6">
-                Over the past decade, we've worked across diverse industries — from education 
-                to women-led enterprises — witnessing firsthand the challenges organizations face: 
+                Over the past decade, we have worked across diverse industries, from education 
+                to women-led enterprises, witnessing firsthand the challenges organizations face: 
                 missed deadlines, wasted resources, and frustrated teams.
               </p>
               
@@ -68,8 +68,8 @@ export function About() {
                 <div className="w-1 h-full min-h-[60px] bg-accent rounded-full" />
                 <p className="text-sm text-foreground italic leading-relaxed">
                   Our certified PMP and Agile professionals bring structured frameworks, 
-                  proven methodologies, and practical coaching to ensure projects don't 
-                  just get completed — they succeed.
+                  proven methodologies, and practical coaching to ensure projects do not 
+                  just get completed, they succeed.
                 </p>
               </div>
             </div>

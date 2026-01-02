@@ -66,11 +66,11 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-card relative">
+    <section id="services" className="py-24 md:py-32 relative section-bg-pattern">
       {/* Subtle accent line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4">
@@ -101,7 +101,7 @@ export function Services() {
                 {category.services.map((service, servIndex) => (
                   <div
                     key={servIndex}
-                    className="group relative bg-secondary rounded-2xl p-8 hover:shadow-card transition-all duration-300"
+                    className="group relative bg-card/80 backdrop-blur-sm rounded-2xl p-8 hover:shadow-card transition-all duration-300 gold-ring-hover"
                   >
                     {/* Icon */}
                     <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${
@@ -121,11 +121,6 @@ export function Services() {
                     <p className="text-muted-foreground leading-relaxed text-sm">
                       {service.description}
                     </p>
-
-                    {/* Hover accent */}
-                    <div className={`absolute bottom-0 left-0 right-0 h-1 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                      category.accent === 'accent' ? 'bg-accent' : 'bg-primary'
-                    }`} />
                   </div>
                 ))}
               </div>

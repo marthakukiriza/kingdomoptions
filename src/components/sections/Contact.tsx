@@ -48,11 +48,11 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-card relative">
+    <section id="contact" className="py-24 md:py-32 relative section-bg-pattern">
       {/* Subtle accent line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider mb-4">
@@ -79,7 +79,7 @@ export function Contact() {
                   <a
                     key={index}
                     href={item.href}
-                    className="flex items-start gap-4 group p-4 rounded-xl hover:bg-secondary transition-colors duration-300"
+                    className="flex items-start gap-4 group p-4 rounded-xl bg-card/50 backdrop-blur-sm gold-ring-hover transition-all duration-300"
                   >
                     <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300">
                       <item.icon className="w-5 h-5 text-accent" />
@@ -93,7 +93,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="p-6 bg-secondary rounded-2xl">
+            <div className="p-6 bg-card/80 backdrop-blur-sm rounded-2xl gold-ring-hover">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 <span className="font-semibold text-foreground">Response time:</span>{" "}
                 We typically respond within 24 hours during business days. Every inquiry 
@@ -104,7 +104,7 @@ export function Contact() {
 
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <div className="bg-secondary rounded-2xl p-8 shadow-soft">
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-soft gold-ring-hover">
               {isSubmitted ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6">
