@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-subtle"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden section-bg-pattern"
     >
       {/* Subtle decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -91,38 +91,37 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Trust indicator */}
-          <div 
-            className="mt-16 pt-8 border-t border-border/50 animate-fade-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <p className="text-sm text-muted-foreground mb-4">
-              Certified professionals trusted across industries
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-foreground/60">
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                PMP Certified
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                Agile Practitioners
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                10+ Years Experience
-              </span>
-            </div>
+      {/* Credentials Carousel */}
+      <div 
+        className="mt-16 pt-8 border-t border-border/50 animate-fade-up overflow-hidden"
+        style={{ animationDelay: "0.4s" }}
+      >
+        <p className="text-sm text-muted-foreground mb-4 text-center">
+          Certified professionals trusted across industries
+        </p>
+        <div className="relative">
+          <div className="flex animate-scroll-left">
+            {[...Array(3)].map((_, repeatIndex) => (
+              <div key={repeatIndex} className="flex shrink-0 gap-8 px-4">
+                <span className="flex items-center gap-2 text-sm font-medium text-foreground/80 whitespace-nowrap">
+                  <span className="w-2 h-2 rounded-full bg-accent" />
+                  PMP Certified
+                </span>
+                <span className="flex items-center gap-2 text-sm font-medium text-foreground/80 whitespace-nowrap">
+                  <span className="w-2 h-2 rounded-full bg-accent" />
+                  Agile Practitioners
+                </span>
+                <span className="flex items-center gap-2 text-sm font-medium text-foreground/80 whitespace-nowrap">
+                  <span className="w-2 h-2 rounded-full bg-accent" />
+                  10+ Years Experience
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-        <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-1.5">
-          <div className="w-1.5 h-3 bg-primary/50 rounded-full animate-bounce" />
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 }

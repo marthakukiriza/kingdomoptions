@@ -15,12 +15,12 @@ export function Promise() {
   };
 
   return (
-    <section id="promise" className="py-24 md:py-32 bg-gradient-subtle relative overflow-hidden">
+    <section id="promise" className="py-24 md:py-32 relative overflow-hidden section-bg-pattern">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-primary/5 to-transparent" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <div className="space-y-8">
@@ -29,7 +29,7 @@ export function Promise() {
                 Our Promise
               </span>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-                More than consultants — your partner in success
+                More than consultants, your partner in success
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 When you partner with Kingdom Options Consulting Ltd, you gain a team 
@@ -41,7 +41,7 @@ export function Promise() {
 
           {/* Right: Promise List */}
           <div className="relative">
-            <div className="bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border">
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-card border border-border gold-ring-hover">
               <h3 className="font-display text-xl font-semibold text-foreground mb-6">
                 What you can expect
               </h3>
