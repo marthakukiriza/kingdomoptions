@@ -87,7 +87,7 @@ export function Services() {
             Comprehensive solutions for project success
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            From planning to execution, we provide the expertise your organization needs.
+            From planning to closure, we provide the expertise your organization needs.
           </p>
         </div>
 
