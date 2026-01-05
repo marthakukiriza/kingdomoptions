@@ -237,19 +237,26 @@
     animation: scroll-left 10s linear infinite;
   }
   
-  /* Gold ring hover effect */
+  /* Gold ring hover effect - thin and fluid */
   .gold-ring-hover {
-    @apply relative transition-all duration-300;
+    @apply relative;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease-out;
   }
   
   .gold-ring-hover::before {
     content: '';
-    @apply absolute inset-0 rounded-2xl pointer-events-none transition-all duration-300;
+    @apply absolute inset-0 rounded-2xl pointer-events-none;
     box-shadow: 0 0 0 0 hsl(40 55% 58% / 0);
+    transition: box-shadow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .gold-ring-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px hsl(352 30% 15% / 0.12);
   }
   
   .gold-ring-hover:hover::before {
-    box-shadow: 0 0 0 4px hsl(40 55% 58% / 1);
+    box-shadow: 0 0 0 2px hsl(40 55% 58% / 0.9);
   }
   
   /* Stagger children animations */

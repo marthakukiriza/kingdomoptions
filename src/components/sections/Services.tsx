@@ -5,24 +5,26 @@ import {
   LineChart, 
   Users, 
   GraduationCap,
-  ArrowRight
+  ArrowRight,
+  Lightbulb,
+  CheckCircle2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const serviceCategories = [
   {
-    category: "Planning & Process",
+    category: "Project Initiation",
     accent: "primary",
     services: [
       {
-        icon: CalendarCheck,
-        title: "Project Planning & Scheduling",
-        description: "Clear, actionable project plans that keep teams aligned and deadlines achievable. From kickoff to delivery, our scheduling frameworks ensure projects stay on track and within budget.",
+        icon: Lightbulb,
+        title: "Project Identification",
+        description: "We partner with organizations to uncover the right projects by developing concepts that directly address their needs. This ensures resources are invested in initiatives that deliver measurable value.",
       },
       {
-        icon: Settings,
-        title: "Process Optimization & Workflow Design",
-        description: "We analyze existing processes, identify inefficiencies, and redesign workflows that maximize productivity and create seamless collaboration across teams.",
+        icon: CalendarCheck,
+        title: "Project Planning & Scheduling",
+        description: "We support development of Project Implementation manuals detailing key procedures. We design clear, actionable project plans that keep teams aligned and deadlines achievable.",
       },
     ],
   },
@@ -31,14 +33,19 @@ const serviceCategories = [
     accent: "accent",
     services: [
       {
-        icon: BarChart3,
-        title: "Performance Monitoring",
-        description: "Real-time visibility into project progress, performance metrics, and risks. Ensuring accountability and informed decision-making at every stage.",
+        icon: Settings,
+        title: "Process Optimization & Workflow Design",
+        description: "We analyze existing processes, identify inefficiencies, and redesign workflows that maximize productivity. Our strategies reduce waste and create seamless collaboration across teams.",
       },
       {
-        icon: LineChart,
-        title: "Reporting Dashboards",
-        description: "Customized dashboards that give stakeholders transparency. We build tools that make tracking simple and strategic decisions data-driven.",
+        icon: BarChart3,
+        title: "Performance Monitoring & Reporting Dashboards",
+        description: "We build customized dashboards that give stakeholders real-time visibility into project progress, performance metrics, and risks. Ensuring accountability at every stage.",
+      },
+      {
+        icon: CheckCircle2,
+        title: "Project Closure & Sustainability",
+        description: "We ensure projects transition smoothly into operations and deliver lasting value. We guide organizations through structured closure processes while embedding sustainability principles.",
       },
     ],
   },
@@ -49,12 +56,12 @@ const serviceCategories = [
       {
         icon: Users,
         title: "Leadership Coaching for Project Managers",
-        description: "One-on-one coaching and mentoring that equips project managers with skills to lead confidently, manage risks, and inspire their teams.",
+        description: "We provide one-on-one coaching and mentoring for project managers, equipping them with the skills to lead confidently, manage risks, and inspire their teams.",
       },
       {
         icon: GraduationCap,
-        title: "Project Management Training",
-        description: "Tailored training programs in Agile, Lean, or traditional frameworks. Practical tools and methodologies that empower teams to adapt and succeed.",
+        title: "Project Management Training for Teams",
+        description: "We deliver tailored training programs that empower project teams with practical tools and methodologies. Whether Agile, Lean, or traditional frameworks.",
       },
     ],
   },
