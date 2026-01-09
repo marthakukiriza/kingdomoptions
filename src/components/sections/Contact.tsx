@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactInfo = [
   {
@@ -30,21 +31,58 @@ export function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    organization: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    toast({
-      title: "Request Received",
-      description: "We'll get back to you within 24 hours.",
-    });
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+
+      if (error) {
+        console.error("Error sending email:", error);
+        toast({
+          title: "Error",
+          description: "Failed to send your message. Please try again or email us directly.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      console.log("Email sent successfully:", data);
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+
+      toast({
+        title: "Request Received",
+        description: "We'll get back to you within 24 hours.",
+      });
+    } catch (error) {
+      console.error("Error:", error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -126,6 +164,9 @@ export function Contact() {
                       </label>
                       <Input
                         required
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
                         placeholder="Your name"
                         className="bg-card border-border focus:border-primary"
                       />
@@ -136,7 +177,10 @@ export function Contact() {
                       </label>
                       <Input
                         required
+                        name="email"
                         type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
                         placeholder="you@company.com"
                         className="bg-card border-border focus:border-primary"
                       />
@@ -149,6 +193,9 @@ export function Contact() {
                         Organization
                       </label>
                       <Input
+                        name="organization"
+                        value={formData.organization}
+                        onChange={handleInputChange}
                         placeholder="Company name"
                         className="bg-card border-border focus:border-primary"
                       />
@@ -158,6 +205,9 @@ export function Contact() {
                         Phone Number
                       </label>
                       <Input
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
                         placeholder="+256 xxx xxx xxx"
                         className="bg-card border-border focus:border-primary"
                       />
@@ -170,6 +220,9 @@ export function Contact() {
                     </label>
                     <Textarea
                       required
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       rows={4}
                       placeholder="Tell us about your project challenges or what you're looking to achieve..."
                       className="bg-card border-border focus:border-primary resize-none"
