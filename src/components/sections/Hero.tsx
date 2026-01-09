@@ -42,11 +42,17 @@ export function Hero() {
             />
             
             {/* Brand name below logo */}
-            <div className="mt-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
+            <div className="mt-8">
+              <h1 
+                className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground animate-fade-up"
+                style={{ animationDelay: "0.15s" }}
+              >
                 Kingdom Options Consulting
               </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground mt-2">
+              <p 
+                className="text-lg sm:text-xl text-muted-foreground mt-2 animate-fade-up"
+                style={{ animationDelay: "0.25s" }}
+              >
                 Turning Chaos into Clarity
               </p>
             </div>
@@ -110,10 +116,12 @@ export function Hero() {
 
             {/* Credentials Carousel */}
             <div 
-              className="mt-16 pt-8 border-t border-border/50 animate-fade-up overflow-hidden"
-              style={{ animationDelay: "0.3s" }}
+              className="mt-16 pt-8 border-t border-border/50 overflow-hidden"
             >
-              <p className="text-sm text-muted-foreground mb-4 text-center">
+              <p 
+                className="text-sm text-muted-foreground mb-4 text-center animate-fade-up"
+                style={{ animationDelay: "0.3s" }}
+              >
                 Certified professionals trusted across industries
               </p>
               <div className="relative">
